@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="肉厚ジューシーなビーフハンバーガーがあなたのお腹を満たしてくれる至福のひととき">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>menu INTO Burger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="./assets/images/icon.PNG" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/icon.PNG" />
+    <link rel="shortcut icon" href="./assets/images/icon.PNG" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/icon.PNG" />
+    <link rel="manifest" href="./assets/images/icon.PNG" />
+    <link rel="stylesheet" href="./assets/css/sanitize.css">
+    <link rel="stylesheet" href="./contact/css/contact.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo">
+            <a href="#">
+                <img src="./assets/images/into-buger-logo-touka.svg" alt="logo">
+            </a>
+        </h1>
+           <!-- ボタン -->
+                <button class="headernavmenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- ナビメニュー -->
+            <nav class="nav">
+                 <button class="nav-close">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul>
+                        <li><a href="./index.html">HOME</a></li>
+                        <li><a href="./menu.html">MENU</a></li>
+                        <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <img src="./contact/image/hero-img.jpg" alt="img">
+            <strong class="hero-text">A juicy burger brings joy to your day.</strong>
+        </div>
+
+        <div class="contact-wrap fadein">
+            <h1 class="contact-title">CONTACT</h1>
+
+            <form class="contact-form" action="#" method="post">
+                <label>
+                    お名前
+                    <input type="text" name="name" required>
+                </label>
+
+                <label>
+                    メールアドレス
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>
+                    お問い合わせ内容
+                    <textarea name="message" rows="6" required></textarea>
+                </label>
+
+                <button type="submit" class="contact-btn">送信する</button>
+            </form>
+        </div>
+
+    <div class="popup-overlay" id="popup">
+        <div class="popup-box">
+            <h2>送信完了！</h2>
+            <p>お問い合わせありがとうございました！</p>
+            <button id="popup-close">閉じる</button>
+        </div>
+    </div>
+    <div class="button-position">
+        <div class="section-button">
+                <a href="./index.html" class="button">
+                    HOMEに戻る
+                </a>
+        </div>
+        <div class="section-button">
+                <a href="./index.html" class="button">
+                    MENUに戻る
+                </a>
+        </div>
+    </div>   
+    </main>
+
+    
+ <footer class="footer">
+        <figure class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d820353.4319708544!2d136.70880493712562!3d36.566032257937515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff7f20918176af5%3A0x6d5abf97791f1de3!2z5a-M5bGx55yM5a-M5bGx5biC!5e0!3m2!1sja!2sjp!4v1763996018206!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <figcaption class="footer-mapinfo">
+                <div class="footer-maplogo">
+                    <img src="./assets/images/into-buger-logo-touka.svg" alt="logo">
+                </div>
+                <div class="map-spot">
+                    <h2 class="mapinfotext">INTO Burger（インテューバーガー）</h2> 
+                <address class="footer-mapaddress">
+                    <i>〒930-0000 富山県富山市1-1-1-11</i><br/>
+                    <a href="https://maps.app.goo.gl/VCJTyreQevAxLmSY7" target="_blank">Google Map</a>
+                </address>
+                </div>
+            </figcaption>
+        </figure>
+        <hr class="footer-line">
+        <small class="footer-copy">© INTO Burger.</small>
+    </footer>
+
+
+    <script src="./contact/js/contact.js"></script>
+    
+</body>
