@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+/*
+base style
+*/
+html {
+    scrollbar-gutter: stable;
+}
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+
+/* 
+header 
+*/
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #333;
+}
+.header-logo {
+    width: 18%;
+    height: auto;
+    display: block;
+}
+.header-logo > img {
+    width: 30px;
+    height: auto;
+}
+
+.headernavmenu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    margin-right: 40px;
+}
+.headernavmenu span {
+    width: 40px;
+    height: 4px;
+    background: #fff;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #444;
+    padding: 60px 20px 0;
+    transition: right 0.5s ease;
+    z-index: 100;
+}
+ .nav.active {
+    right: 0;
+}
+
+/* ×ボタン */
+.nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-close span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+/* 1本目（／） */
+.nav-close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* 2本目（＼） */
+.nav-close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ハンバーガー押したら表示 */
+.nav.active {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: #444;
+  width: 300px;
+  height: 1000px;
+  padding: 50px 0px 0px 25px;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+.header {
+    width: 410px;
+    height: 60px;
+}
+.header-logo {
+    width: 60%;
+    height: auto;
+}
+.fadein {
+    margin: 0 0 15px 0px;
+}
+.nav.active {
+    width: 200px;
+}
+}
+
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    max-width: 100%;
+    margin-top: 80px;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    font-size: 30px;
+    top: 315px;
+    right: 10px;
+    color: #fff;
+    font-family: "Story Script";
+}
+
+@media screen and (max-width: 768px) {
+.hero img{
+    margin-top: 60px;
+    height: 70px;
+}
+.hero-text {
+    top: 95px;
+    right: 5px;
+    font-size: 25px;
+}
+}
+
+
+/* Contact wrap */
+.contact-wrap {
+    padding: 60px;
+    background: rgb(255, 224, 188);
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-bottom: 8px;
+    display: inline-block;
+    border-bottom: 2px solid #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 20px 0px 0px 500px;
+}
+
+.contact-form label {
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 60%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #bbb;
+    font-size: 16px;
+}
+
+.contact-btn {
+    margin-top: 20px;
+    padding: 15px 0;
+    width: 60%;
+    border-radius: 10px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-btn:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+.contact-wrap {
+    padding: 0;
+}
+.contact-form {
+    margin: 0 0px 0 50px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    height: 40px;
+}
+.contact-btn {
+    font-size: 17px;
+    padding: 15px 0;
+    margin: 20px 0px 30px 40px;
+}
+}
+
+/* ===== ポップアップ全体 ===== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+/* ===== ポップの箱 ===== */
+.popup-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    animation: popup-anim .4s ease;
+}
+
+.popup-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.popup-box p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+#popup-close {
+    padding: 10px 40px;
+    font-size: 16px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== アニメーション ===== */
+@keyframes popup-anim {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.button-position {
+    display: flex;
+    text-align: center;
+    
+}
+.section-button {
+    margin-top: 20px;
+    padding: 15px 0;
+    margin: 30px auto 30px auto;
+    width: 30%;
+    border-radius: 10px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+
+.section-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+.section-button {
+    font-size: 18px;
+    margin: 15px auto 30px auto;
+    width: 40%;
+}
+}
+
+
+/*
+fooder
+*/
+.footer {
+    margin: 0;
+    background-color: #333;
+    color: #fff;
+}
+.footer-map {
+    margin: 0px;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-map > iframe {
+    width: 60%;
+}
+.footer-mapinfo {
+    width: 40%;
+    margin-left: 0;
+}
+.footer-maplogo {
+    font-size: 14px;
+    font-weight: bold;
+    width: 70%;
+    height: auto;
+    display: block;
+}
+.mapinfotext {
+    margin-left: 15px;
+}
+.footer-mapaddress {
+    font-style: normal;
+    margin-left: 10px;
+    margin: 10px 0px 0px 10px;
+}
+.fooder-mapaddress > a {
+    color: #fff;
+}
+.footer-line {
+    border-color: #444;
+}
+.footer-copy {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+.map-spot {
+    margin: -20px 0px 0 25px;
+}
+
+@media screen and (max-width: 768px) {
+.footer-map > iframe {
+    width: 100%;
+    height: 200px;
+}
+.mapinfotext {
+    margin: 0;
+    font-size: 15px;
+    width: 350px;
+}
+.footer-mapaddress {
+    font-size: 15px;
+    margin: 0;
+    width: 350px;
+    color: #fff;
+}
+.footer-map {
+    display: block;
+}
+.footer-maplogo {
+    width: 300px;
+    height: auto;
+}
+.map-spot {
+    margin: -10px 0 0 19px
+    
+}
+}
